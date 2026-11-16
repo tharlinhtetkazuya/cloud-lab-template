@@ -1,0 +1,43 @@
+== STEP 1: CLOUD ENVIRONMENT AUDIT ==
+2026-11-02T06:58:28Z
+CODESPACES=true
+CODESPACE_NAME=humble-train-4556774xx5x35xg6
+GITHUB_USER=tharlinhtetkazuya
+Linux codespaces-e478e3 6.8.0-1064-azure #72~22.04.1-Ubuntu SMP Wed Jul 22 23:39:45 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+NAME="Ubuntu"
+cpus=2
+               total        used        free      shared  buff/cache   available
+Mem:           7.8Gi       1.8Gi       510Mi        62Mi       5.8Gi       6.0Gi
+Swap:             0B          0B          0B
+Filesystem      Size  Used Avail Use% Mounted on
+overlay          32G   13G   18G  43% /
+Client:
+ Version:           29.8.0-1
+ API version:       1.56
+ Go version:        go1.27.1
+ Git commit:        88096ef00576baf72a9cb45caa45c0544c40e0a7
+ Built:             Wed Sep  9 11:17:47 2026
+ OS/Arch:           linux/amd64
+ Context:           default
+
+Server:
+ Engine:
+  Version:          29.8.0-1
+  API version:      1.56 (minimum version 1.40)
+  Go version:       go1.27.1
+  Git commit:       3ce5872b7950c63ba2ffbc5123101019ff3e6682
+  Built:            Wed Sep  9 11:21:29 2026
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          2.3.4-2
+  GitCommit:        db8809540e1a7a9da5d518876894933ff55692ab
+ runc:
+  Version:          1.5.1-13
+  GitCommit:        8f2685a471d3347a686ad3909783d8aafc6bb208
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        
+driver=overlayfs cgroup=v2 cpus=2 
+mem=8328077312

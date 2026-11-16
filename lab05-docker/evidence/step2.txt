@@ -1,0 +1,127 @@
+== STEP 2: SIZE PROOF ==
+2026-11-02T08:16:50Z
+--- building SINGLE-stage (expect 2-4 minutes) ---
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.single
+#1 transferring dockerfile: 364B done
+#1 DONE 0.0s
+
+#2 [auth] library/node:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:20
+#3 DONE 1.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 137B done
+#4 DONE 0.0s
+
+#5 [1/4] FROM docker.io/library/node:20@sha256:8f693eaa7e0a8e71560c9a82b55fd54c2ae920a2ba5d2cde28bac7d1c01c9ba5
+#5 resolve docker.io/library/node:20@sha256:8f693eaa7e0a8e71560c9a82b55fd54c2ae920a2ba5d2cde28bac7d1c01c9ba5 0.0s done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 3.85kB done
+#6 DONE 0.0s
+
+#7 [2/4] WORKDIR /app
+#7 CACHED
+
+#8 [3/4] COPY . .
+#8 CACHED
+
+#9 [4/4] RUN apt-get update  && apt-get install -y --no-install-recommends build-essential python3 git  && npm install  && npm run build
+#9 CACHED
+
+#10 exporting to image
+#10 exporting layers done
+#10 exporting manifest sha256:5671c468754ecd655c948e6e479647681f07e180272f01514d10d1de656d16a6 done
+#10 exporting config sha256:a0e88d11729c005d6f6bfe66206c31fb3c8f6dcf7e3d191d6cb7d48c94a64cb1 done
+#10 exporting attestation manifest sha256:3dba4579cc7b1755cef5e5befb13556f48af7565c36d3ff62bded4f42bcde44d
+#10 exporting attestation manifest sha256:3dba4579cc7b1755cef5e5befb13556f48af7565c36d3ff62bded4f42bcde44d 0.0s done
+#10 exporting manifest list sha256:56ea1fa670cb86158cbf96ea8f4d7ef04701884deb561ea9278932b3173d71ef 0.0s done
+#10 naming to docker.io/library/vlsc-s05:single done
+#10 unpacking to docker.io/library/vlsc-s05:single done
+#10 DONE 0.1s
+
+real	0m1.578s
+user	0m0.133s
+sys	0m0.080s
+--- building MULTI-stage ---
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.46kB done
+#1 DONE 0.0s
+
+#2 [auth] docker/dockerfile:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 resolve image config for docker-image://docker.io/docker/dockerfile:1.7
+#3 DONE 1.1s
+
+#4 docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#4 resolve docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e 0.0s done
+#4 CACHED
+
+#5 [internal] load metadata for docker.io/library/node:20-alpine
+#5 ...
+
+#6 [auth] library/alpine:pull token for registry-1.docker.io
+#6 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/library/node:20-alpine
+#5 DONE 0.3s
+
+#7 [internal] load metadata for docker.io/library/alpine:3.20
+#7 DONE 1.1s
+
+#8 [internal] load .dockerignore
+#8 transferring context: 137B done
+#8 DONE 0.0s
+
+#9 [internal] load build context
+#9 DONE 0.0s
+
+#10 [runner 1/7] FROM docker.io/library/alpine:3.20@sha256:d9e853e87e55526f6b2917df91a2115c36dd7c696a35be12163d44e6e2a4b6bc
+#10 resolve docker.io/library/alpine:3.20@sha256:d9e853e87e55526f6b2917df91a2115c36dd7c696a35be12163d44e6e2a4b6bc 0.1s done
+#10 DONE 0.1s
+
+#11 [builder 1/7] FROM docker.io/library/node:20-alpine@sha256:fb4cd12c85ee03686f6af5362a0b0d56d50c58a04632e6c0fb8363f609372293
+#11 resolve docker.io/library/node:20-alpine@sha256:fb4cd12c85ee03686f6af5362a0b0d56d50c58a04632e6c0fb8363f609372293
+#11 resolve docker.io/library/node:20-alpine@sha256:fb4cd12c85ee03686f6af5362a0b0d56d50c58a04632e6c0fb8363f609372293 0.1s done
+#11 CANCELED
+
+#9 [internal] load build context
+#9 transferring context: 181B done
+#9 DONE 0.0s
+
+#12 [builder 2/7] WORKDIR /app
+#12 CACHED
+
+#13 [builder 3/7] COPY package.json package-lock.json ./
+#13 ERROR: failed to calculate checksum of ref enmfclnl0fvqvzsomet2d9c5y::rh7sftxicgjxuu44fxqxuiena: "/package-lock.json": not found
+
+#10 [runner 1/7] FROM docker.io/library/alpine:3.20@sha256:d9e853e87e55526f6b2917df91a2115c36dd7c696a35be12163d44e6e2a4b6bc
+#10 sha256:25f1d6b1951ac8eb3740558fe94cb83d377bdadf95fd9f98b50d2e1b96130471 0B / 3.63MB 0.0s
+#10 ...
+
+#14 [runner 2/7] RUN apk add --no-cache libstdc++  && addgroup -S app  && adduser -S -G app -H -s /sbin/nologin app
+#14 CANCELED
+------
+ > [builder 3/7] COPY package.json package-lock.json ./:
+------
+ERROR: failed to build: failed to solve: failed to compute cache key: failed to calculate checksum of ref enmfclnl0fvqvzsomet2d9c5y::rh7sftxicgjxuu44fxqxuiena: "/package-lock.json": not found
+
+real	0m2.629s
+user	0m0.124s
+sys	0m0.090s
+--- sizes ---
+TAG       SIZE      IMAGE ID
+single    1.7GB     56ea1fa670cb
+single_bytes=1702065995
+
+Error response from daemon: No such image: vlsc-s05:multi
+--- layer breakdown (multi) ---
+Error response from daemon: No such image: vlsc-s05:multi
